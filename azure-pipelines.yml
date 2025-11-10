@@ -1,0 +1,16 @@
+trigger:
+- main
+
+pool:
+  name: Default
+  demands:
+    - agent.os -equals Windows_NT
+
+steps:
+- checkout: self
+
+- script: |
+    echo "Pipeline started!"
+    echo "Hello from Windows agent!"
+    echo "Pipeline finished!"
+  displayName: "Maven Finished"
